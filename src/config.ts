@@ -25,8 +25,8 @@ const config: Config = {
     verifyToken: '/auth/verifyToken',
 
     //User
-    createUser: '/users',
-  },
+    createUser: '/users'
+  }
 };
 
 export default config;
