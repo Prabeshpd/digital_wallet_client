@@ -34,7 +34,7 @@ function Login(props: StatePropsInterface & DispatchPropsInterface) {
   };
 
   if (isLoggedIn) {
-    return <Navigate to="/beers" replace={true} />;
+    return <Navigate to="/app/wallet" replace={true} />;
   }
 
   return (

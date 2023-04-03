@@ -4,20 +4,20 @@ import { useNavigate } from 'react-router-dom';
 
 import SignupForm from './signupForm';
 
-import { CreateUser } from '../../actions/user';
+import { createUser } from '../../actions/user';
 import { SignupPayload } from 'types/Signup';
 
 interface DispatchPropsInterface {
-  CreateUser: (payload: SignupPayload) => void;
+  createUser: (payload: SignupPayload) => void;
 }
 
 export function SignUp(props: DispatchPropsInterface) {
   let navigate = useNavigate();
 
-  const { CreateUser } = props;
+  const { createUser } = props;
   const handleFormSubmit = async (payload: SignupPayload) => {
     try {
-      await CreateUser(payload);
+      await createUser(payload);
       navigate('/login');
     } catch (err) {
       console.log(err);
@@ -35,7 +35,7 @@ export function SignUp(props: DispatchPropsInterface) {
 }
 
 const mapDispatchToProps = {
-  CreateUser,
+  createUser,
 };
 
 export default connect<null, DispatchPropsInterface>(null, mapDispatchToProps)(SignUp);

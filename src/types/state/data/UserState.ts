@@ -9,9 +9,7 @@ interface User {
   user: {
     readonly id: number;
     readonly email: string;
-    readonly lastName: string;
-    readonly username: string;
-    readonly firstName: string;
+    readonly name: string;
     readonly createdAt: string;
     readonly isActive: boolean;
     readonly updatedAt: string;

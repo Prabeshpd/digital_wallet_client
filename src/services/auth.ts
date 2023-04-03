@@ -98,6 +98,8 @@ export async function logout({ force }: { force: boolean }): Promise<LogoutRespo
     let response;
     try {
       response = await http.post(url, param);
+      localStorage.clear();
+      localStorage.removeItem('persist:root');
     } catch {
       return Promise.resolve(true);
     }
@@ -106,6 +108,9 @@ export async function logout({ force }: { force: boolean }): Promise<LogoutRespo
       ...response.data
     };
   }
+
+  localStorage.clear();
+  localStorage.removeItem('persist:root');
 
   return Promise.resolve(true);
 }

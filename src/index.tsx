@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import 'font-awesome/css/font-awesome.css';
 import 'foundation-sites/dist/css/foundation.min.css';
+import './global.css';
 
 import store, { persistor } from './store';
 
