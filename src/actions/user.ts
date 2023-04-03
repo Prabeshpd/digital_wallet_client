@@ -20,4 +20,4 @@ export type CreateUserPending = Action<CREATE_USER_PENDING>;
 export type CreateUserFulfilled = Action<CREATE_USER_FULFILLED>;
 export type CreateUserRejected = ActionWithError<CREATE_USER_REJECTED, AxiosError<Error>>;
 
-export const CreateUser = createAction(CREATE_USER, userService.createUser);
+export const createUser = createAction(CREATE_USER, userService.createUser);

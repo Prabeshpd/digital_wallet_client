@@ -14,12 +14,10 @@ export const INITIAL_STATE: UserState = {
   user: {
     createdAt: '',
     email: '',
-    firstName: '',
+    name: '',
     id: 0,
     isActive: false,
-    lastName: '',
     updatedAt: '',
-    username: '',
   },
 };
 

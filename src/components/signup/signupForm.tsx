@@ -16,6 +16,7 @@ export function SignUpForm(props: InjectedProps) {
         name: '',
         email: '',
         password: '',
+        identificationNumber: '',
       }}
       validationSchema={signupSchema}
       onSubmit={async (values) => {
@@ -23,6 +24,7 @@ export function SignUpForm(props: InjectedProps) {
           name: values.name.trim(),
           email: values.email.trim(),
           password: values.password,
+          identificationNumber: values.identificationNumber.trim(),
         };
 
         await handleFormSubmit(payload);
@@ -47,6 +49,19 @@ export function SignUpForm(props: InjectedProps) {
             <div className="cell small-12">
               <label>
                 <input
+                  type="email"
+                  placeholder="email"
+                  name="email"
+                  required
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.email && touched.email && errors.email}
+              </label>
+            </div>
+            <div className="cell small-12">
+              <label>
+                <input
                   type="password"
                   placeholder="password"
                   name="password"
@@ -60,14 +75,14 @@ export function SignUpForm(props: InjectedProps) {
             <div className="cell small-12">
               <label>
                 <input
-                  type="email"
-                  placeholder="email"
-                  name="email"
+                  type="text"
+                  placeholder="Identification Number provided by government"
+                  name="identificationNumber"
                   required
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {errors.email && touched.email && errors.email}
+                {errors.password && touched.password && errors.password}
               </label>
             </div>
           </div>

@@ -1,7 +1,5 @@
 import { InternalAxiosRequestConfig } from 'axios';
 
-import * as HttpStatus from 'http-status-codes';
-
 import store from '../store';
 import http from './http';
 import config from '../config';
@@ -34,7 +32,7 @@ export async function unauthorizedResponseHandlerInterceptor(err: any) {
   const originalRequest = err.config;
   let code = err.response && err.response.status;
 
-  if (code === HttpStatus.UNAUTHORIZED && !originalRequest['__isRetryRequest']) {
+  if (code === 401 && !originalRequest['__isRetryRequest']) {
     originalRequest.__isRetryRequest = true;
     try {
       const accessToken = (await store.dispatch(refreshToken())) as any;
