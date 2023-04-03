@@ -16,6 +16,7 @@ export function SwitcherComponent(props: PropType) {
     if (isValidElement(element) && isFunction(element.type) && element.type.prototype['__type'] == type) {
       return element;
     }
+    return <></>;
   });
 
   return <>{childElement}</>;
