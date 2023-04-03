@@ -36,8 +36,8 @@ const config: Config = {
     walletTransfer: '/wallets/transfer',
 
     //User
-    createUser: '/users',
-  },
+    createUser: '/users'
+  }
 };
 
 export default config;

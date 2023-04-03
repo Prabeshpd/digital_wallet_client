@@ -16,7 +16,7 @@ if (window['__REDUX_DEVTOOLS_EXTENSION__']) {
 
 const persistConfig = {
   key: 'root',
-  storage,
+  storage
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
